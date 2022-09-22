@@ -1,20 +1,30 @@
-body{
-    margin: 0;
-    overflow: hidden;
+body {
+	margin: 0;
+	overflow: hidden;
 }
 
 .container {
-    position: relative;
+	display: none;
+	position: relative;
+}
+
+.tryButton {
+	width: 100px;
+	height: 100px;
+	background-color: green;
+	position: absolute;
+	top: 72%;
+	left: 34%;
 }
 
 .product-png {
-    position: absolute;
-    z-index: 100;
-    width: 650px;
-    overflow: hidden;
-    top: 333px;
-    left: 18%;
+	position: absolute;
+	z-index: 100;
+	width: 650px;
+	overflow: hidden;
+	top: 333px;
+	left: 18%;
 }
 .myCanvas {
-    position: absolute;
+	position: absolute;
 }
