@@ -10,9 +10,9 @@ body{
 .product-png {
     position: absolute;
     z-index: 100;
-    width: 550px;
+    width: 650px;
     overflow: hidden;
-    top: 294px;
+    top: 333px;
     left: 18%;
 }
 .myCanvas {
