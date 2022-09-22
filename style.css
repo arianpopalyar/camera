@@ -2,3 +2,19 @@ body{
     margin: 0;
     overflow: hidden;
 }
+
+.container {
+    position: relative;
+}
+
+.product-png {
+    position: absolute;
+    z-index: 100;
+    width: 550px;
+    overflow: hidden;
+    top: 294px;
+    left: 18%;
+}
+.myCanvas {
+    position: absolute;
+}

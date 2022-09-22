@@ -1,15 +1,20 @@
 let VIDEO=null;
 let CANVAS=null;
+// let CANVASIMG=null
 let CONTEXT=null;
+// let CONTEXTIMG=null;
 let SCALER=0.8;
 let SIZE={x:0,y:0,width:0,height:0};
 
 function main() {
-
+    // CANVASIMG=document.getElementById("canvas2");
+    // CONTEXTIMG=CANVASIMG.getContext("2d");
 
     CANVAS=document.getElementById("myCanvas");
     CONTEXT=CANVAS.getContext("2d");
     
+    // CANVASIMG=document.getElementById("canvas2");
+    // CONTEXTIMG=CANVAS.getContext("2d");
 
 
     let promise=navigator.mediaDevices.getUserMedia({video:true});
@@ -21,7 +26,7 @@ function main() {
         VIDEO.onloadeddata=function() {
             handleResize();
             window.addEventListener('resize',handleResize);
-            PutImage ();
+            // PutImage ();
             updateCanvas();
            
         }
@@ -32,13 +37,13 @@ function main() {
   
 }
 
-function PutImage (){
-    var img = new Image();
-    img.src = "./images/black.png";
-    img.onload = function() {
-        CONTEXT.drawImage(img,10,20,600, 500);
-    }
-}
+// function PutImage (){
+//     var img = new Image();
+//     img.src = "./images/black.png";
+//     img.onload = function() {
+//         CONTEXTIMG.drawImage(img,10,20,600, 500);
+//     }
+// }
 
 function handleResize() {
     CANVAS.width=window.innerWidth;
@@ -57,7 +62,7 @@ function handleResize() {
 }
 
 function updateCanvas() {
-    
+    // CONTEXTIMG.globalCompositeOperation='destination-over';
     CONTEXT.drawImage(VIDEO,
         SIZE.x, SIZE.y,
         SIZE.width, SIZE.height);
