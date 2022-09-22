@@ -1,16 +1,22 @@
 let VIDEO=null;
 let CANVAS=null;
 let CONTEXT=null;
-let SCALER=0.9;
-let SIZE={x:0,y:0,width:0,height:0};
 
 function main() {
-
+    document.getElementsByClassName("container__background")[0].style.display = "none";
+    document.getElementsByClassName("container__button--try")[0].style.display ="none";
+    document.getElementsByClassName("container__canvas")[0].style.display ="block";
     CANVAS=document.getElementById("myCanvas");
     CONTEXT=CANVAS.getContext("2d");
 
 
-    let promise=navigator.mediaDevices.getUserMedia({video:true});
+    let promise=navigator.mediaDevices.getUserMedia({
+        video: {
+            width:{exact:800},
+            height:{exact:700}
+        }
+    });
+
     promise.then(function(signal){
         VIDEO=document.createElement("video");
         VIDEO.srcObject=signal;
@@ -28,25 +34,11 @@ function main() {
 }
 
 function handleResize() {
-    CANVAS.width=window.innerWidth;
-    CANVAS.height=window.innerHeight;
-
-    let resizer=SCALER*
-    Math.min(
-        window.innerWidth/VIDEO.videoWidth,
-        window.innerHeight/VIDEO.videoHeight
-    );
-
-    SIZE.width=resizer*VIDEO.videoWidth;
-    SIZE.height=resizer*VIDEO.videoHeight;
-    SIZE.x=window.innerWidth/2-SIZE.width/2;
-    SIZE.y=window.innerHeight/2-SIZE.height/2;
+    CANVAS.width=1200;
+    CANVAS.height=900
 }
 
 function updateCanvas() {
-    CONTEXT.drawImage(VIDEO,
-        SIZE.x, SIZE.y,
-        SIZE.width, SIZE.height);
-        
+    CONTEXT.drawImage(VIDEO,10,10);
     window.requestAnimationFrame(updateCanvas);
 }

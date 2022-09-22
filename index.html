@@ -5,12 +5,13 @@
         <script src="script.js"></script>
         <link href="style.css" rel="stylesheet"></link>
     </head>
-<body onload="main()">
-    <img src="./images/backgroundClothesImage.png" class="background-png">
-    <div class="tryButton"></div>
+<body>
     <div class="container">
+    <img src="./images/backgroundClothesImage.png" class="container__background">
+    <div class="container__button--try" onclick="main()">Try on</div>
+    <div class="container__canvas">
         <canvas id="myCanvas"></canvas>
-        <img src="./images/top.png" class="product-png">
+        <img src="./images/top.png" class="container__image">
     </div>
 </body>
     

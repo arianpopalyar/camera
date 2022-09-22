@@ -3,28 +3,40 @@ body {
 	overflow: hidden;
 }
 
-.container {
+.container__canvas {
 	display: none;
 	position: relative;
 }
 
-.tryButton {
-	width: 100px;
-	height: 100px;
-	background-color: green;
-	position: absolute;
-	top: 72%;
-	left: 34%;
+.container__button--try {
+    width: 160px;
+    height: 32px;
+    text-align: center;
+    border-radius: 2px;
+    background-color: #bed755;
+    position: absolute;
+    top: 68%;
+    color: #534343;
+    line-height: 27px;
+    left: 60%;
+    font-family: arial;
 }
 
-.product-png {
-	position: absolute;
-	z-index: 100;
-	width: 650px;
-	overflow: hidden;
-	top: 333px;
-	left: 18%;
+.container__image {
+    position: absolute;
+    z-index: 100;
+    width: 700px;
+    overflow: hidden;
+    top: 287px;
+    left: 3%;
 }
-.myCanvas {
+#myCanvas {
 	position: absolute;
+}
+
+.container__background{
+    width: 72%;
+    position: relative;
+    margin-left: 11%;
+    display: block;
 }
